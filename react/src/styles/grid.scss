@@ -1,0 +1,20 @@
+.px-auto {
+  padding-right: Max(calc(50vw - var(--container)/2), 24px);
+  padding-left: Max(calc(50vw - var(--container)/2), 24px);
+}
+.py-auto {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @media(min-width: $md) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media(min-width: $lg) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}

@@ -1,0 +1,43 @@
+#transactions {
+  table {
+    tbody {
+      tr {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-collapse: inherit;
+  border-spacing: 0;
+  td, th {
+    padding: 12px 8px;
+  }
+  thead {
+    th {
+      font-weight: bold;
+      border-bottom: 2px solid;
+    }
+  }
+  tbody {
+    font-size: 14px;
+    tr {
+      background-color: #222a;
+      transition: background ease .3s;
+      &:nth-child(odd) {
+        background-color: #222e;
+      }
+      &:hover {
+        background-color: #000;
+      }
+    }
+    td {
+      height: 64px;
+    }
+  }
+}

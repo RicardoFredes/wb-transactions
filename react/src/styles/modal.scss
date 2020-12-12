@@ -1,0 +1,95 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000c;
+  padding: 24px 12px;
+
+  > * {
+    background-color: #222;
+    max-width: 550px;
+    width: 100%;
+    min-height: 200px;
+    .title {
+      background-color: var(--color-primary);
+      padding: 16px;
+      text-align: center;
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+
+.steps-progress {
+  width: 100%;
+  padding-top: 24px;
+  border-bottom: 2px solid var(--color-primary);
+  .steps {
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    > * {
+      padding-bottom: 24px;
+      flex-grow: 1;
+      position: relative;
+      color: #999;
+      &::after {
+        content: '';
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-color: #222;
+        border-radius: 50%;
+        border: 2px solid var(--color-primary);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+      &.completed {
+        color: white;
+        &::after {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+.transaction-modal {
+  .transaction {
+    padding: 56px 24px;
+    text-align: center;
+    background-color: #fff1;
+    svg {
+      transform: rotate(90deg);
+    }
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      svg {
+        transform: rotate(0);
+      }
+    }
+    .label {
+      font-size: 14px;
+    }
+    .name {
+      margin: 0;
+    }
+  }
+  .price {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
