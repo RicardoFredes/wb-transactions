@@ -3035,6 +3035,11 @@ raw-body@2.4.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+rc-portal@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/rc-portal/-/rc-portal-2.3.0.tgz#0ea17b63b745487710b7f392371e9d5671a79918"
+  integrity sha512-kLkNqZycVmaiqWWxJhSSNHrXcNmz3mgluo5m34jq0bh9g98Er4fPVNro3MrphixWQzF93rOGsF32hMYXJCgrRQ==
+
 rc@^1.2.7:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
