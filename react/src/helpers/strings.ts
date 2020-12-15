@@ -1,4 +1,8 @@
-export const normalizeString = (string: string) => string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+export const normalizeString = (string: string) =>
+  string
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
 
 export const compareSentenceAndValue = (sentence: string, value: string) => {
   const s1 = normalizeString(sentence)

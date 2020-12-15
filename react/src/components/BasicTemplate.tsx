@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header'
-import Footer from './Footer'
 import Seo, { ISeo } from './Seo'
 
 interface IBasicTemplate {
@@ -16,7 +15,6 @@ export default function BasicTemplate({ seo, children }: Partial<IBasicTemplate>
       <main>
         {children}
       </main>
-      <Footer />
     </>
   )
 }

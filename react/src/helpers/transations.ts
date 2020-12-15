@@ -1,4 +1,4 @@
-import { sortByDate } from "./sorts"
+import { sortByDate } from './sorts'
 
 type TStatus = string
 
@@ -18,7 +18,7 @@ export const parseTransations = (transactions: ITransaction[]): any[] => {
   return sortByDate(transactions).map((props: ITransaction) => ({
     statusLabel: translateTransactionStatus(props.status),
     price: amountToBRL(props.amount),
-    ...props
+    ...props,
   }))
 }
 
@@ -28,7 +28,8 @@ export const TRANSACTIONS_STATUS: any = {
   processed: 'Concluído',
 }
 
+export const transactionOptions = Object.entries(TRANSACTIONS_STATUS).map(([value, label]) => ({ value, label }))
+
 export const translateTransactionStatus = (status: string) => TRANSACTIONS_STATUS[status] || 'Desconhecido'
 
-const amountToBRL = (amount: number) => amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-
+const amountToBRL = (amount: number) => amount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })

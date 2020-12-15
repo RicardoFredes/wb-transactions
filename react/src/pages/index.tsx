@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import BasicTemplate from '../components/BasicTemplate'
 import mock from '../data/mock.json'
-import { parseTransations } from '../helpers/transations'
+import { parseTransations, transactionOptions } from '../helpers/transations'
 import TableData from '../components/Table/TableData'
 import TRTransaction from '../components/Table/TRTransaction'
-import InputFilter from 'components/Form/InputFilter'
-import OptionsFilter from 'components/Form/OptionsFilter'
+import SearchFilter from '../components/Form/SearchFilter'
+import Section from 'components/Section'
 
 const showKeys = [
   { value: 'title', label: 'Título' },
@@ -27,37 +27,27 @@ export default function Index() {
 
   return (
     <BasicTemplate seo={{ title: 'Warren Brasil | Transations', description: '' }}>
-      <section className="px-auto py-auto">
+      <Section>
         {loading 
           ? 'Carregando transações...'
           : data.length > 0 
             ? <Content originalData={data} />
             : 'Você ainda não tem transações.'
         }
-      </section>
+      </Section>
     </BasicTemplate>
   )
 }
 
 function Content({ originalData }) {
   const [data, setData] = useState(originalData)
-
   return (
     <>
-      <SearchFilter data={originalData} setData={setData} />
+      <SearchFilter data={originalData} setData={setData} options={transactionOptions} />
       <div id="transactions overflow-x-auto">
         <TableData data={data} showKeys={showKeys} TRComponent={TRTransaction} />
       </div>
     </>
-  )
-}
-
-function SearchFilter({ data, setData}) {
-  return (
-    <div className="mb-1x">
-      <InputFilter data={data} setData={setData} placeholder="Pesquisar por título" />
-      <OptionsFilter data={data} setData={setData} />
-    </div>
   )
 }
 

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { compareSentenceAndValue } from 'helpers/strings'
+import React from 'react'
 
-export default function InputFilter({ data, setData, defaultValue = '', ...props }) {
-  const [value, setValue] = useState(defaultValue)
+interface IInputFilter {
+  onChange?: (value: string) => any
+  [props: string]: any
+}
 
+export default function InputFilter({ onChange, ...props }: IInputFilter) {
   const handleChange = event => {
-    const valueField = event.target.value
-    setValue(valueField)
-    const newData = data.filter(({ title }) => compareSentenceAndValue(title, valueField))
-    setData(newData)
+    const value = event.target.value
+    if (onChange) onChange(value)
   }
 
-  return <input {...props} type="text" defaultValue={value} onChange={handleChange} autoComplete="off" />
+  return <input type="text" onChange={handleChange} autoComplete="off" {...props} />
 }
