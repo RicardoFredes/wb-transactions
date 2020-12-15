@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { TRANSACTIONS_STATUS } from '../helpers/transations'
+import { TRANSACTIONS_STATUS, translateTransactionStatus } from '../helpers/transations'
 import Arrow from './Arrow'
 import Modal from './Modal'
 
@@ -9,13 +9,16 @@ export interface ITransactionModal {
   from: string
   to: string
   price: string
+  status: string
 }
 
-export default function TransactionModal({ title, from, to, price }: Partial<ITransactionModal>) {
+export default function TransactionModal({ title, from, to, price, status }: Partial<ITransactionModal>) {
+  const currentStep = translateTransactionStatus(status || '')
+  const steps = Object.values(TRANSACTIONS_STATUS) as []
   return (
     <Modal className="transaction-modal">
       <h3 className="title">{title}</h3>
-      <StepsProgress steps={Object.values(TRANSACTIONS_STATUS)} currentStepIndex={1} />
+      <StepsProgress steps={steps} currentStep={currentStep} />
       <div className="transaction">
         <div>
           <span className="label">De</span>
@@ -36,7 +39,8 @@ export default function TransactionModal({ title, from, to, price }: Partial<ITr
 }
 
 
-function StepsProgress({ steps = [], currentStepIndex = 0 }) {
+function StepsProgress({ steps = [], currentStep = '' }) {
+  const currentStepIndex = steps.findIndex(step => step === currentStep)
   return (
     <div className="steps-progress">
       <div className="steps">

@@ -28,7 +28,7 @@ export const TRANSACTIONS_STATUS: any = {
   processed: 'Concluído',
 }
 
-const translateTransactionStatus = (status: string) => TRANSACTIONS_STATUS[status] || 'Desconhecido'
+export const translateTransactionStatus = (status: string) => TRANSACTIONS_STATUS[status] || 'Desconhecido'
 
 const amountToBRL = (amount: number) => amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 

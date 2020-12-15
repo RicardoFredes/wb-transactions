@@ -78,6 +78,7 @@
       }
       &.completed {
         color: white;
+        font-weight: bold;
         &::after {
           background-color: white;
         }
