@@ -44,9 +44,11 @@ function Content({ originalData }) {
   return (
     <>
       <SearchFilter data={originalData} setData={setData} options={transactionOptions} />
-      <div id="transactions overflow-x-auto">
-        <TableData data={data} showKeys={showKeys} TRComponent={TRTransaction} />
-      </div>
+      {data.length > 0 ? (
+        <div id="transactions overflow-x-auto">
+          <TableData data={data} showKeys={showKeys} TRComponent={TRTransaction} />
+        </div>
+      ) : 'Nenhuma transação encontrada.'}
     </>
   )
 }
