@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
-import { TRANSACTIONS_STATUS, translateTransactionStatus } from '../helpers/transations'
-import Arrow from './Arrow'
+import { TRANSACTIONS_STATUS, translateTransactionStatus } from '../../helpers/transations'
+import Arrow from '../Icons/Arrow'
 import Modal from './Modal'
 
 export interface ITransactionModal {

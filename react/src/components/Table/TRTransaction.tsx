@@ -1,13 +1,13 @@
 import React from 'react'
 import { ITRComponent } from './TableData'
-import { useModalContext } from './ModalContext'
-import TransactionModal from './TransactionModal'
+import { useModalContext } from '../Modal/ModalContext'
+import TransactionModal from '../Modal/TransactionModal'
 
-export default function TransactionTR({ row, cells }: ITRComponent) {
+export default function TRTransaction({ row, cells }: ITRComponent) {
   const { openModal } = useModalContext()
   const modal = <TransactionModal {...row} />
   return (
-    <tr onClick={() => openModal(modal)}>
+    <tr className="cursor-pointer" onClick={() => openModal(modal)}>
       {cells.map((cell, key) => (
         <td key={key}>
           {cell}

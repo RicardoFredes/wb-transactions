@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface IShowKey {
-  name: string
+  value: string
   label?: string
 }
 
@@ -25,8 +25,8 @@ export default function TableData({ data, showKeys, TRComponent = TR }: ITableDa
     <table>
       <thead>
         <tr>
-          {keys.map(({ name, label }) => (
-            <th key={name}>{label || name}</th>
+          {keys.map(({ value, label }) => (
+            <th key={value}>{label || value}</th>
           ))}
         </tr>
       </thead>
@@ -50,9 +50,9 @@ const TR = ({ cells }: ITRComponent) => (
 
 const getHead = (data: any[], showKeys: IShowKey[] = []): IShowKey[] => {
   if (showKeys.length > 0) return showKeys
-  return Object.keys(data[0]).map(name => ({ name }))
+  return Object.keys(data[0]).map(value => ({ value }))
 }
 
 const getCellsFromKeys = (row: any = {}, showKeys: IShowKey[] = []): any[] => {
-  return showKeys.map(({ name }) => row[name])
+  return showKeys.map(({ value }) => row[value])
 }

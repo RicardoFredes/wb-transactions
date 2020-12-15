@@ -1,8 +1,13 @@
 interface ISortByDate {
-  date: string | number
+  date: any
   [props: string]: any
 }
 
-export const sortByDate = (arr: ISortByDate[]) => {
-  return [].concat(arr.sort((a, b) => new Date(b.date) - new Date(a.date)))
+export const sortByDate = (arr: ISortByDate[]) => sort(arr, (a, b) => getDate(b) - getDate(a))
+
+const getDate = ({ date }): number => new Date(date).getTime()
+
+const sort = (arr: any[], condition: (a, b) => number) => {
+  const newArr = [].concat(arr as [])
+  return newArr.sort(condition)
 }
