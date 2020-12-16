@@ -36,6 +36,11 @@ table {
       &:hover {
         background-color: #000;
       }
+      &:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: -4px;
+        background-color: #000;
+      }
     }
     td {
       height: 64px;

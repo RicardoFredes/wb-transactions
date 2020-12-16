@@ -10,6 +10,7 @@ export interface ISeo {
 export default function Seo({ title, description = '', image }: Partial<ISeo>) {
   return (
     <Head>
+      <link rel="shortcut icon" type="image/png" href="favicon.png" sizes="256x256" />
       <title>{title}</title>
       <meta name="description" content={description} />
 

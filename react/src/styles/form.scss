@@ -1,16 +1,22 @@
 #filter {
-  display: flex;
-  align-items: center;
-  margin-left: -4px;
-  margin-right: -4px;
   > * {
-    &:first-child {
-      flex-grow: 1;
+    width: 100%;
+    margin: 4px;
+  }
+  @media (min-width: $md) {
+    display: flex;
+    align-items: center;
+    margin-left: -4px;
+    margin-right: -4px;
+    > * {
+      width: inherit;
+      &:first-child {
+        flex-grow: 1;
+      }
+      &:nth-child(2) {
+        min-width: 220px;
+      }
     }
-    &:nth-child(2) {
-      min-width: 220px;
-    }
-    margin: 0 4px;
   }
 }
 
@@ -36,6 +42,7 @@ button, .btn {
   display: inline-flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
   border: none;
   border-radius: 0;
   outline: none;

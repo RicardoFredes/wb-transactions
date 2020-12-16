@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import BasicTemplate from '../components/BasicTemplate'
-import mock from '../data/mock.json'
-import { parseTransations, transactionOptions, STATUS_NOTIFICATIONS } from '../helpers/transations'
+import { transactionOptions, STATUS_NOTIFICATIONS } from '../helpers/transations'
 import TableData from '../components/Table/TableData'
 import TRTransaction from '../components/Table/TRTransaction'
 import SearchFilter from '../components/Form/SearchFilter'
 import Section from 'components/Section'
 import StatusNotification from 'components/StatusNotification'
+import { getTransactions } from 'helpers/api'
 
 const showKeys = [
   { value: 'title', label: 'Título' },
@@ -18,13 +18,14 @@ const showKeys = [
 export default function Index() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
-  const [hasError, setHasError] = useState(true)
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     setLoading(true)
-    const newData = parseTransations(mock) as []
-    setData(newData)
-    setLoading(false)
+    getTransactions()
+      .then(setData)
+      .catch(() => setHasError(true))
+      .then(() => setLoading(false))
   }, [])
 
   return (
@@ -54,8 +55,10 @@ function Content({ originalData }) {
     <>
       <SearchFilter data={originalData} setData={setData} options={transactionOptions} />
       {data.length > 0 ? (
-        <div id="transactions overflow-x-auto">
-          <TableData data={data} showKeys={showKeys} TRComponent={TRTransaction} />
+        <div id="transactions">
+          <div className="overflow-x-auto">
+            <TableData data={data} showKeys={showKeys} TRComponent={TRTransaction} />
+          </div>
         </div>
       ) : (
         showNotification(STATUS_NOTIFICATIONS.notFound)

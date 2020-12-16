@@ -23,9 +23,17 @@ export default function SearchFilter({ data, setData, options }) {
 
   return (
     <div id="filter" className="mb-1x">
-      <InputFilter placeholder="Pesquisar por título" value={text} onChange={setText} />
-      <OptionsFilter options={options} placeholder="Filtrar por status" value={status} onChange={setStatus} />
-      <button onClick={reset}>Limpar filtros</button>
+      <InputFilter tabIndex={1} placeholder="Pesquisar por título" value={text} onChange={setText} />
+      <OptionsFilter
+        tabIndex={2}
+        options={options}
+        placeholder="Filtrar por status"
+        value={status}
+        onChange={setStatus}
+      />
+      <button tabIndex={3} onClick={reset}>
+        Limpar filtros
+      </button>
     </div>
   )
 }
