@@ -25,9 +25,7 @@ export default function TransactionModal({ title, from, to, price, status }: Par
           <h4 className="name">{from}</h4>
         </div>
         <Arrow fill="#999" />
-        <div className="price">
-          {price}
-        </div>
+        <div className="price">{price}</div>
         <Arrow fill="#999" />
         <div>
           <span className="label">Para</span>
@@ -38,14 +36,15 @@ export default function TransactionModal({ title, from, to, price, status }: Par
   )
 }
 
-
 function StepsProgress({ steps = [], currentStep = '' }) {
   const currentStepIndex = steps.findIndex(step => step === currentStep)
   return (
     <div className="steps-progress">
       <div className="steps">
         {steps.map((step, key) => (
-          <span className={classNames({ completed: currentStepIndex >= key })} key={key}>{step}</span>
+          <span className={classNames({ completed: currentStepIndex >= key })} key={key}>
+            {step}
+          </span>
         ))}
       </div>
     </div>

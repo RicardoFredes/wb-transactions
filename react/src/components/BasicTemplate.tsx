@@ -12,9 +12,7 @@ export default function BasicTemplate({ seo, children }: Partial<IBasicTemplate>
     <>
       <Seo {...seo} />
       <Header />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </>
   )
 }

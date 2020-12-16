@@ -9,9 +9,7 @@ export default function TRTransaction({ row, cells }: ITRComponent) {
   return (
     <tr className="cursor-pointer" onClick={() => openModal(modal)}>
       {cells.map((cell, key) => (
-        <td key={key}>
-          {cell}
-        </td>
+        <td key={key}>{cell}</td>
       ))}
     </tr>
   )

@@ -7,7 +7,7 @@ interface IShowKey {
 
 export interface ITableData {
   data: any[]
-  showKeys?: IShowKey[],
+  showKeys?: IShowKey[]
   TRComponent?: any
 }
 
@@ -15,7 +15,7 @@ export interface ITRComponent {
   index: number
   row: any
   cells: any[]
-} 
+}
 
 export default function TableData({ data, showKeys, TRComponent = TR }: ITableData) {
   if (data.length === 0) return null
@@ -41,9 +41,7 @@ export default function TableData({ data, showKeys, TRComponent = TR }: ITableDa
 const TR = ({ cells }: ITRComponent) => (
   <tr>
     {cells.map((cell, key) => (
-      <td key={key}>
-        {cell}
-      </td>
+      <td key={key}>{cell}</td>
     ))}
   </tr>
 )

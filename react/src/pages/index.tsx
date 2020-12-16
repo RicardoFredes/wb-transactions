@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import BasicTemplate from '../components/BasicTemplate'
 import mock from '../data/mock.json'
-import { parseTransations, transactionOptions } from '../helpers/transations'
+import { parseTransations, transactionOptions, STATUS_NOTIFICATIONS } from '../helpers/transations'
 import TableData from '../components/Table/TableData'
 import TRTransaction from '../components/Table/TRTransaction'
 import SearchFilter from '../components/Form/SearchFilter'
 import Section from 'components/Section'
+import StatusNotification from 'components/StatusNotification'
 
 const showKeys = [
   { value: 'title', label: 'Título' },
   { value: 'description', label: 'Descrição' },
   { value: 'statusLabel', label: 'Status' },
-  { value: 'price', label: 'Valor' }
+  { value: 'price', label: 'Valor' },
 ]
 
 export default function Index() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
+  const [hasError, setHasError] = useState(true)
 
   useEffect(() => {
     setLoading(true)
@@ -28,15 +30,22 @@ export default function Index() {
   return (
     <BasicTemplate seo={{ title: 'Warren Brasil | Transations', description: '' }}>
       <Section>
-        {loading 
-          ? 'Carregando transações...'
-          : data.length > 0 
-            ? <Content originalData={data} />
-            : 'Você ainda não tem transações.'
-        }
+        {hasError ? (
+          showNotification(STATUS_NOTIFICATIONS.error)
+        ) : loading ? (
+          showNotification(STATUS_NOTIFICATIONS.loading)
+        ) : data.length === 0 ? (
+          showNotification(STATUS_NOTIFICATIONS.empty)
+        ) : (
+          <Content originalData={data} />
+        )}
       </Section>
     </BasicTemplate>
   )
+}
+
+function showNotification(props) {
+  return <StatusNotification {...props} />
 }
 
 function Content({ originalData }) {
@@ -48,8 +57,9 @@ function Content({ originalData }) {
         <div id="transactions overflow-x-auto">
           <TableData data={data} showKeys={showKeys} TRComponent={TRTransaction} />
         </div>
-      ) : 'Nenhuma transação encontrada.'}
+      ) : (
+        showNotification(STATUS_NOTIFICATIONS.notFound)
+      )}
     </>
   )
 }
-

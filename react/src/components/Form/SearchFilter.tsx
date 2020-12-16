@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { compareSentenceAndValue } from 'helpers/strings';
-import InputFilter from './InputFilter';
-import OptionsFilter from './OptionsFilter';
+import React, { useEffect, useState } from 'react'
+import { compareSentenceAndValue } from 'helpers/strings'
+import InputFilter from './InputFilter'
+import OptionsFilter from './OptionsFilter'
 
 export default function SearchFilter({ data, setData, options }) {
   const [text, setText] = useState('')
@@ -13,7 +13,7 @@ export default function SearchFilter({ data, setData, options }) {
   }
 
   useEffect(() => {
-    const newData = data.filter((element) => {
+    const newData = data.filter(element => {
       const hasStatus = !status || element.status === status
       const hasSentence = !text || compareSentenceAndValue(element.title, text)
       return hasStatus && hasSentence
@@ -22,10 +22,10 @@ export default function SearchFilter({ data, setData, options }) {
   }, [text, status])
 
   return (
-    <div className="mb-1x">
+    <div id="filter" className="mb-1x">
       <InputFilter placeholder="Pesquisar por título" value={text} onChange={setText} />
       <OptionsFilter options={options} placeholder="Filtrar por status" value={status} onChange={setStatus} />
       <button onClick={reset}>Limpar filtros</button>
     </div>
-  );
+  )
 }
