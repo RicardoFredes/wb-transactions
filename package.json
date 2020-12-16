@@ -1,10 +1,6 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.x",
-    "yarn": ">=1.19.1"
-  },
   "main": "index.js",
   "license": "MIT",
   "scripts": {
