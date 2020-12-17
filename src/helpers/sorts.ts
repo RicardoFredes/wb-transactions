@@ -3,7 +3,11 @@ interface ISortByDate {
   [props: string]: any
 }
 
-export const sortByDate = (arr: ISortByDate[]) => sort(arr, (a, b) => getDate(b) - getDate(a))
+export const sortByDate = (arr: ISortByDate[], desc = true) =>
+  sort(arr, (a, b) => {
+    if (desc) return getDate(b) - getDate(a)
+    return getDate(a) - getDate(b)
+  })
 
 const getDate = ({ date }): number => new Date(date).getTime()
 

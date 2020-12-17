@@ -1,0 +1,67 @@
+[
+  {
+    "amount": 172513.46,
+    "date": "2020-04-29",
+    "dateBR": "29/04/2020",
+    "description": "labore id culpa magna minim",
+    "from": "Férias",
+    "id": "5f89f9f235a90e5336c796f7",
+    "price": "R$172,513.46",
+    "status": "created",
+    "statusLabel": "Solicitado",
+    "title": "Movimentação interna",
+    "to": "Conta Warren"
+  },
+  {
+    "amount": 51668.85,
+    "date": "2020-01-01",
+    "dateBR": "01/01/2020",
+    "description": "aute aliqua eu excepteur et",
+    "from": "Férias",
+    "id": "5f89f9f23e427f64fc2ea101",
+    "price": "R$51,668.85",
+    "status": "processing",
+    "statusLabel": "Processando",
+    "title": "Depósito",
+    "to": "Conta Warren"
+  },
+  {
+    "amount": 2078.66,
+    "date": "2018-12-22",
+    "dateBR": "22/12/2018",
+    "description": "et labore proident aute nulla",
+    "from": "Aposentadoria",
+    "id": "5f89f9f257fe42957bf6dbfd",
+    "price": "R$2,078.66",
+    "status": "created",
+    "statusLabel": "Solicitado",
+    "title": "Resgate",
+    "to": "Conta Warren"
+  },
+  {
+    "amount": 148856.29,
+    "date": "2017-07-23",
+    "dateBR": "23/07/2017",
+    "description": "excepteur veniam proident irure pariatur",
+    "from": "Trade",
+    "id": "5f89f9f271e4213092bd4e41",
+    "price": "R$148,856.29",
+    "status": "created",
+    "statusLabel": "Solicitado",
+    "title": "Depósito",
+    "to": "Conta Warren"
+  },
+  {
+    "amount": 25092.8,
+    "date": "2016-08-25",
+    "dateBR": "25/08/2016",
+    "description": "eu officia laborum labore aute",
+    "from": "Férias",
+    "id": "5f89f9f2f318e70ff298f528",
+    "price": "R$25,092.80",
+    "status": "processed",
+    "statusLabel": "Concluído",
+    "title": "Movimentação interna",
+    "to": "Trade"
+  }
+]
