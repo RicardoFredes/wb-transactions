@@ -1,3 +1,4 @@
+import 'universal-fetch'
 import { parseTransations } from './transations'
 
 const apiUrl = 'https://warren-transactions-api.herokuapp.com/api/transactions'
