@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 5000",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "build": "next build",
     "lint": "prettier --write \"src/**/*.{ts,tsx,js}\"",
     "test": "jest",
