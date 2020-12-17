@@ -106,9 +106,9 @@
       svg {
         transform: rotate(0);
       }
-    }
-    > *:not(.label) {
-      width: 30%;
+      > *:not(svg) {
+        width: 30%;
+      }
     }
     .label {
       font-size: 14px;
