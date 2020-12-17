@@ -1,7 +1,7 @@
 # Desafio: Warren Transactions (Web)
 Esse projeto foi realizado para o desafio da warren e pode ser [acessado aqui](https://wb-transactions.herokuapp.com/). 
 
-
+<img src="https://raw.githubusercontent.com/RicardoFredes/wb-transactions/main/public/printWarren.png" />
 
 Link para descrição do desafio [aqui](https://github.com/warrenbrasil/desafio-warren-web).
 
