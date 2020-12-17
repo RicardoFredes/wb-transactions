@@ -38,6 +38,7 @@ export default function TableData({ data, showKeys, TRComponent = TR }: ITableDa
     </table>
   )
 }
+
 const TR = ({ cells }: ITRComponent) => (
   <tr>
     {cells.map((cell, key) => (

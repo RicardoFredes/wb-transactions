@@ -9,6 +9,7 @@ import StatusNotification from '../components/StatusNotification'
 import { getTransactions } from '../helpers/api'
 
 const showKeys = [
+  { value: 'dateBR', label: 'Data' },
   { value: 'title', label: 'Título' },
   { value: 'description', label: 'Descrição' },
   { value: 'statusLabel', label: 'Status' },

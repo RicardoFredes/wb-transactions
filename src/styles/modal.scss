@@ -88,6 +88,10 @@
 }
 
 .transaction-modal {
+  cursor: pointer;
+  > * {
+    cursor: initial;
+  }
   .transaction {
     padding: 56px 24px;
     text-align: center;
@@ -102,6 +106,9 @@
       svg {
         transform: rotate(0);
       }
+    }
+    > *:not(.label) {
+      width: 30%;
     }
     .label {
       font-size: 14px;

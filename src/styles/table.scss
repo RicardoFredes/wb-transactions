@@ -3,6 +3,11 @@
     tbody {
       tr {
         cursor: pointer;
+        &:not(:first-child).separated {
+          td {
+            border-top: 5px solid black;
+          }
+        }
       }
     }
   }
