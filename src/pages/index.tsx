@@ -4,9 +4,9 @@ import { transactionOptions, STATUS_NOTIFICATIONS } from '../helpers/transations
 import TableData from '../components/Table/TableData'
 import TRTransaction from '../components/Table/TRTransaction'
 import SearchFilter from '../components/Form/SearchFilter'
-import Section from 'components/Section'
-import StatusNotification from 'components/StatusNotification'
-import { getTransactions } from 'helpers/api'
+import Section from '../components/Section'
+import StatusNotification from '../components/StatusNotification'
+import { getTransactions } from '../helpers/api'
 
 const showKeys = [
   { value: 'title', label: 'Título' },

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { compareSentenceAndValue } from 'helpers/strings'
+import { compareSentenceAndValue } from '../../helpers/strings'
 import InputFilter from './InputFilter'
 import OptionsFilter from './OptionsFilter'
 
