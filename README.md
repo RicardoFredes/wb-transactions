@@ -1,5 +1,9 @@
 # Desafio: Warren Transactions (Web)
-Esse projeto foi realizado para o desafio da warren que pode ser acessado [aqui](https://github.com/warrenbrasil/desafio-warren-web).
+Esse projeto foi realizado para o desafio da warren e pode ser [acessado aqui](https://wb-transactions.herokuapp.com/). 
+
+
+
+Link para descrição do desafio [aqui](https://github.com/warrenbrasil/desafio-warren-web).
 
 ## Tecnologias
 As tecnologias escolhidas para executar esse desafio foram:
