@@ -93,8 +93,6 @@ describe('Página de transações', () => {
   })
   context('Modal', () => {
     it('Ao clicar sobre uma transação deve abrir uma modal com os seus detalhers', () => {
-      makeFetchResponse(transactions)
-      cy.visit(url)
       cy.get('table > tbody > tr').first().click()
       cy.get('.modal')
     })

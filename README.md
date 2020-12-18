@@ -10,18 +10,25 @@ As tecnologias escolhidas para executar esse desafio foram:
 
 - Node 12.x
 - React
+- Sass
 - NextJs
 - TypeScript
 - Jest
-- Sass
+- Cypress
 
 Embora a stack da warren seja VueJs, escolhi usar **React** por ser a tecnologia que mais domino e é a que uso no dia a dia. Já utilizei Angular JS e comecei a estudar VueJs após começar o desafio, mas, devido ao prazo de uma semana, preferi não arriscar implementar o framework.
 
 O NextJs tem o mesmo propósito do NuxtJs, além de já suportar o uso do TypeScript e propor uma organização para o projeto, que é de fácil entendimento. Entre outras vantagens, como a de otimização da build.
 
-TypeScript é uma tecnologia essencial para a qualidade e consistência de código. Sempre que é possível, a uso em todos os projetos.
+TypeScript é uma tecnologia essencial para a qualidade e consistência de código e eliminar testes de timpagem. Sempre que é possível, a uso em todos os projetos.
 
 Utilizei Sass por ser o pré-processador mais popular, além usá-lo no dia a dia, também já fiz uso do Stylus e do Less.
+
+Para os testes usei o Jest e o Cypress, o primeiro para os testes unitários e o segundo para os testes end to end. Como o front-end acaba mudando com mais frequência que o back-end, os testes foram aplicados nas helpers, pois essas sim devem ser 100% confiáveis. Já para testar a regra de negócio e o funcionamento geral, foi usado o teste e2e.
+
+<img src="https://raw.githubusercontent.com/RicardoFredes/wb-transactions/main/public/unitTests.png" />
+
+<img src="https://raw.githubusercontent.com/RicardoFredes/wb-transactions/main/public/e2eTests.png" />
 
 Por fim, utilizei o mínimo de libs externas possíveis, mesmo quando trabalho em projetos mais complexos, sempre tento usar poucas dependências.
 
@@ -93,10 +100,25 @@ yarn dev
 Esse comando abrirá um seridor em [http://localhost:5000](http://localhost:5000).
 
 ### Rodando os testes
+
+#### Testes unitários
 Em ambiente de desenvolvimento rode o comando:
 
 ```bash
 yarn test
+```
+
+#### Testes end to end
+Em ambiente de desenvolvimento rode o comando:
+
+```bash
+yarn dev
+```
+
+com outra aba do terminar aberta, rode o comando:
+
+```bash
+yarn e2e
 ```
 
 ### Rodando o lint
