@@ -91,3 +91,17 @@ Em ambiente de desevolvimento rode o comando:
 yarn dev
 ```
 Esse comando abrirá um seridor em [http://localhost:5000](http://localhost:5000).
+
+### Rodando os testes
+Em ambiente de desenvolvimento rode o comando:
+
+```bash
+yarn test
+```
+
+### Rodando o lint
+Em ambiente de desenvolvimento rode o comando:
+
+```bash
+yarn lint
+```

@@ -11,8 +11,8 @@ describe('transactions', () => {
     ])
   })
   test('translateTransactionStatus', () => {
-    const entries = ['created', 'processing', 'processed']
-    const result = ['Solicitado', 'Processando', 'Concluído']
+    const entries = ['created', 'processing', 'processed', 'invalid_value']
+    const result = ['Solicitado', 'Processando', 'Concluído', 'Desconhecido']
     entries.forEach((value, key) => expect(translateTransactionStatus(value)).toBe(result[key]))
   })
   test('parseTransations', () => {

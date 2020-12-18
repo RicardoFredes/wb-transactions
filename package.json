@@ -9,11 +9,13 @@
     "build": "next build",
     "lint": "prettier --write \"{__tests__,src}/**/*.{ts,tsx,js}\"",
     "test": "jest",
+    "test:coverage": "jest --coverage --updateSnapshot",
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "classnames": "2.2.6",
     "next": "10.0.3",
+    "node-fetch": "^2.6.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "1.30.0"
@@ -23,6 +25,7 @@
     "@types/jest": "^26.0.19",
     "@types/next": "^9.0.0",
     "@types/node": "^14.14.12",
+    "@types/node-fetch": "^2.5.7",
     "@types/react": "^17.0.0",
     "@types/sass": "^1.16.0",
     "babel-jest": "^26.6.3",
