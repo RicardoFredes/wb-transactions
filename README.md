@@ -92,7 +92,7 @@ yarn install
 ```
 
 ### Rodando a aplicação
-Em ambiente de desevolvimento rode o comando:
+Em ambiente de desenvolvimento rode o comando:
 
 ```bash
 yarn dev
@@ -115,7 +115,7 @@ Em ambiente de desenvolvimento rode o comando:
 yarn dev
 ```
 
-com outra aba do terminar aberta, rode o comando:
+com outra aba do terminal aberta, rode o comando:
 
 ```bash
 yarn e2e
