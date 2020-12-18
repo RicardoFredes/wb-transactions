@@ -18,7 +18,7 @@ const showKeys = [
 
 export default function Index() {
   const [data, setData] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
   useEffect(() => {

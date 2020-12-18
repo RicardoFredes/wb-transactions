@@ -1,0 +1,10 @@
+{
+  "fixturesFolder": "__e2e__/fixtures",
+  "integrationFolder": "__e2e__/integration",
+  "screenshotsFolder": "__e2e__/screenshots",
+  "supportFile": false,
+  "defaultCommandTimeout": 20000,
+  "requestTimeout": 15000,
+  "video": false,
+  "chromeWebSecurity": false
+}
